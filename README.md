@@ -44,8 +44,9 @@ http://nota.whereby.com/general-project
 
 ## 6. 진행 상황
 
-- [day 1: django 설치](1.md)
-- [day 2: MTV, GET - path parameter로 인자 받기](2.md)
+- [day 1: django 설치](day1/1.md)
+- [day 2: MTV, GET - path parameter로 인자 받기](day2/2.md)
+- [day3: DTL(Django Template Language)](day3/3.md)
 
 
 
