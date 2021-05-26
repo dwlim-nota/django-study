@@ -48,6 +48,7 @@ http://nota.whereby.com/general-project
 - [day 2: MTV, GET - path parameter로 인자 받기](day2/2.md)
 - [day3: DTL(Django Template Language)](day3/3.md)
 - [day4: get으로 요청하고 받기(query string)](day4/README.md)
+- [day5: post method, bootstrap, template 상속](day5/README.md)
 
 
 
