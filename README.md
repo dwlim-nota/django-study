@@ -49,8 +49,15 @@ http://nota.whereby.com/general-project
 - [day3: DTL(Django Template Language)](day3/3.md)
 - [day4: get으로 요청하고 받기(query string)](day4/README.md)
 - [day5: post method, bootstrap, template 상속](day5/README.md)
+- [day6: static file 제공](day6/README.md)
+- [day6-2: ORM](day6-2/README.md)
+- 
 
 
+
+- 추가로 시간 날 때 깊이 있게 다룰 주제들
+  - html + css
+  - packet의 구조 보기
 
 ## 7. 중간 프로젝트 / 최종 프로젝트
 
