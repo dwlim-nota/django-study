@@ -1,88 +1,43 @@
-# day6-2: ORM(Object-relational mapping)
+# day7: ORM, CRUD
 
 
 
-# Database
+## 복습([day6](../day6/README.md), [day6-2](../day6-2/README.md))
 
-데이터베이스는 체계화된 데이터의 모임입니다.
-
-몇 개의 자료 파일을 조직적으로 통합하여 자료항목의 중복을 없애고 조작할 수 있습니다.
-
-- 스키마(scheme) 데이터베이스에서 자료의 구조, 표현방법, 관계 등을 정의한 구조
-
-1. 어떠한 구조로 데이터를 저장할지 스키마를 만들어야 합니다.
-2. 각각의 속성이 어떠한 데이터 타입을 가질지 명시해야 합니다.
-3. 우리가 만든 스키마를 토대로 데이터를 조작합니다.
+- static file의 serving에 대해서 학습했습니다.
+  - load static이라는 DTL 구문을 사용했었습니다.
+- ORM에 대해서 학습했습니다.
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - 데이터(DB에서의 하나의 row)를 생성하는 3가지 방법(`Article()`, `Article(title=)`, `Article.objects.create(title=) `)
+- 이제 디자인 패턴인 MTV(Model-Template-View) 모델에 대해서 약간씩은 다뤄봤습니다.
 
 
 
-## query문의 종류
+## 오늘 학습 내용
 
-- DDL(Data Definition Langauge), DML(Data Manufacturing Language), DCL(Data Control Langauge)
-  - DDL의 예: CREATE, DROP, ALTER
-  - DML의 예: INSERT, UPDATE, DELETE, SELECT
-  - DCL의 예: GRANT, REVOKE
-
-장고에서는 CRUD 오퍼레이션을 ORM을 통해서 합니다.
-
-
-
-
-
-## sqlite3 다운로드
-
-sqlite3는 서버없이 사용할 수 있는 데이터베이스의 일종입니다.
-
-mysql, mssql 등의 DB는 데이터베이스 서버 프로그램이 실행되어야 하는 반면에,
-
-sqlite3는 서버 프로그램 없이 실행되기 때문에, 쉽게 사용할 수 있습니다.
-
-(모바일 등에서 서버 접속없이 할 때, 주로 사용합니다.)
-
-![image-20191029094032331](img/README/image-20191029094032331.png)
-
-두 개의 파일을 받아서, 하나의 폴더에 넣어줍니다.
+- ORM으로 data 조작 방법
+  - all: 모든 항목 가져오기
+  - get: 하나의 항목 가져오기
+  - filter
+    - <column_name>__contains
+    - <column_name>__startswith
+    - <column_name>__endswith
+- django admin
+- CRUD 개념 설명
 
 
 
-![image-20191029094229161](img/README/image-20191029094229161.png)
+오늘은 day6-2의 폴더를 카피해서 그대로 사용하도록 하겠습니다.
 
-![image-20191029094432003](img/README/image-20191029094432003.png)
-
-편하게 실행할 수 있도록 환경변수에 path를 등록해줍니다.
+제 github의 day7의 소스코드를 그대로 카피하셔서 사용하셔도 괜찮습니다.
 
 
 
-![image-20191029095238793](img/README/image-20191029095238793.png)
-
-
-
-이렇게 화면이 뜨면 sqlite3가 잘 설치된 것입니다.
-
-
-
-## model 생성
-
-새로 프로젝트를 시작해 줍시다.
-
-프로젝트 이름은 django_crud로 만들어 줍니다.
-
-`django-admin startproject django_crud .`
-
-`django-admin startapp articles`
-
-이번에는 settings.py에서 INSTALLED_APPS 에만 articles를 추가해 주고,
-
-그 외에는 건드리지 않겠습니다.
-
-오늘은 model에 대해서만 집중해서 하도록 하겠습니다.
-
-![image-20191029102459034](img/README/image-20191029102459034.png)
-
-
+articles라는 이름의 앱에서 모델은 이렇게 구성되어 있습니다.
 
 ```python
-# models.py
+# articles/models.py
 
 from django.db import models
 
@@ -94,100 +49,19 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 ```
 
-```bash
-python manage.py makemigrations
-```
-
-위의 명령어를 실행시키면, migration 파일이 만들어집니다.
-
-이 생성된 파일은 직접적으로 sql을 만들기 위한 설계도 같은 역할을 합니다.
 
 
-
-![image-20191029102755445](img/README/image-20191029102755445.png)
-
-migrations 폴더에서 우리가 명시한 것보다 좀 더 구체화된 것을 확인할 수 있습니다.
-
-(model file -> migration file)
-
-
-
-```bash
-python manage.py migrate
-```
-
-위의 명령어를 입력해주면, 실제로 sql을 만들어서 반영
-
-
-
-sqlite3 db.sqlite3
-
-위의 명령어를 실행하면, sqlite로 진입해서 실제 데이터를 볼 수 있습니다.
-
-
-
-- 간단한 sqlite 명령어
-
-```
-.table
-.exit
-```
-
-
+오늘은 쉘에서 부터 시작하도록 하겠습니다.
 
 ## shell로 들어가기
 
-```
+```bash
 $ python manage.py shell
 ```
 
-![image-20191029104455495](img/README/image-20191029104455495.png)
+![image-20191029104455495](img/README/image-20191029104455495-1622175147440.png)
 
 
-
-## record를 만드는 첫 번째 방법(인스턴스를 만든 후 데이터 넣고 save)
-
-```
-# Article 클래스를 불러옵니다.
->>> from articles.models import Article
-
-# select * from <table>에 해당하는 명령어 입니다.
->>> Article.objects.all()
-<QuerySet []>
->>> article1 = Article()
->>> article1
-<Article: Article object (None)>
->>> article1.title = '1번제목'
->>> article1.title
-'1번제목'
->>> article1.content = '1번내용'
->>> article1.content
-'1번내용'
->>> article1.save()
->>> article1.created_at
-datetime.datetime(2019, 10, 29, 1, 46, 35, 161295, tzinfo=<UTC>)
-```
-
-
-
-## record를 만드는 두 번째 방법(인스턴스를 만들면서 값을 넣어서 초기화 한 후 save)
-
-```
->>> article2 = Article(title='2번제목', content='2번내용')
->>> article2.title
-'2번제목'
->>> article2.save()
->>>
-```
-
-
-
-## record를 만드는 세 번재 방법(create메소드 호출)
-
-```
->>> Article.objects.create(title='3번제목', content='3번 내용')
-<Article: Article object (3)>
-```
 
 
 
@@ -195,15 +69,17 @@ datetime.datetime(2019, 10, 29, 1, 46, 35, 161295, tzinfo=<UTC>)
 
 ### get - 하나의 레코드를 가져올 때
 
-```
+```python
 >>> article3 = Article.objects.get(pk=3)
 # >>> article3 = Article.objects.get(id=3)
 # id와 pk는 같습니다.
 ```
 
+
+
 ### filter - 필터 적용
 
-```
+```python
 # filter 적용하기
 >>> article = Article.objects.filter(title='3번제목')
 >>> article
@@ -212,8 +88,165 @@ datetime.datetime(2019, 10, 29, 1, 46, 35, 161295, tzinfo=<UTC>)
 
 
 
-## 다음 시간 배울 내용
+### last - 마지막 항목 가져오기
 
-ORM 마무리,
+```python
+>>> article = Article.objects.all().last()
+>>> article
+<Article: 4번글- 4번제목 : >
+```
 
-CRUD 실습
+
+
+### order_by - 쿼리 결과를 정렬해서 반환
+
+```python
+# 오름차순 정렬
+>>> articles = Article.objects.all().order_by('pk')
+>>> articles
+<QuerySet [<Article: 1번글- 1번제목: 1번내용>, <Article: 2번글- 2번제목: 2번내용>, <Article: 3번글- 3번제목: 3번 내용>, <Article: 4번글- 4번제목: >]>
+```
+
+```python
+# 내림차순 정렬
+>>> articles = Article.objects.all().order_by('-pk')
+>>> articles
+<QuerySet [<Article: 4번글- 4번제목: >, <Article: 3번글- 3번제목: 3번 내용>, <Article: 2번글- 2번제목: 2번내용>, <Article: 1번글- 1번제목: 1번내용>]>
+```
+
+
+
+### indexing, slicing
+
+```python
+# 슬라이싱
+>>> articles[:2]
+<QuerySet [<Article: 4번글- 4번제목: >, <Article: 3번글- 3번제목: 3번 내용>]>
+
+# 인덱싱
+>>> articles[0]
+<Article: 4번글- 4번제목: >
+```
+
+
+
+## 특정 데이터를 포함하는 레코드 찾기
+
+```python
+# SQL의 'like' 표현
+>>> Article.objects.filter(title__contains='1번')
+<QuerySet [<Article: 1번글- 1번제목: 1번내용>]>
+
+# 특정 데이터로 시작하는 것 찾기
+>>> Article.objects.filter(title__startswith='1')
+<QuerySet [<Article: 1번글- 1번제목: 1번내용>]>
+
+# 특정 데이터로 끝나는 것 찾기
+>>> Article.objects.filter(title__endswith='목')
+<QuerySet [<Article: 1번글- 1번제목: 1번내용>, <Article: 2번글- 2번제목: 2번내용>, <Article: 3번글- 3번제목: 3번 내용>, <Article: 4번글- 4번제목: >]>
+```
+
+
+
+## update
+
+단순히 레코드를 가져와서 정보를 바꾸고 save()해주면 정보가 업데이트 됩니다.
+
+```python
+>>> article = Article.objects.get(pk=1)
+>>> article.title
+'1번제목'
+>>> article.title = '2번제목'
+>>> article.title
+'2번제목'
+>>> article.save()
+```
+
+
+
+## delete
+
+```python
+>>> article = Article.objects.get(pk=1)
+>>> article.delete()
+```
+
+
+
+
+
+## admin page
+
+`localhost:8000/admin`: 페이지에서 관리자 권한으로 데이터를 관리할 수 있습니다.
+
+![image-20191029132248418](img/README/image-20191029132248418.png)
+
+하지만, 슈퍼유저가 없기 때문에 만들어줘야 합니다.
+
+id: root / pw: root
+
+(실제로 사용할 목적으로 만드실 때는 다른 id, 복잡한 pw로 해주세요..!!)
+
+그리고 validation check는 하지 않도록 y를 입력해줍니다.
+
+```bash
+$ python manage.py createsuperuser
+사용자 이름 (leave blank to use 'user'): root
+이메일 주소:
+Password:
+Password (again):
+Superuser created successfully.
+```
+
+(또한 슈퍼유저를 만들려면 최초의 migrate를 해줘야 합니다. 즉, migration을 하지 않은 상태에서는 createsuperuser를 해도 오류가 납니다.)
+
+
+
+```python
+# articles/admin.py
+from django.contrib import admin
+from .models import Article
+
+# Register your models here.
+admin.site.register(Article)
+```
+
+
+
+
+
+![image-20191029132645960](img/README/image-20191029132645960.png)
+
+밖으로 나가면 다음과 같이 게시글들이 있습니다.
+
+
+
+![image-20191029132846215](img/README/image-20191029132846215.png)
+
+
+
+하지만 깔끔하게 보이도록 하기 위해서 다음과 같이 코드를 추가해 줍니다.
+
+```python
+# articles/admin.py
+from django.contrib import admin
+from .models import Article
+
+# Register your models here.
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('pk','title', 'content', 'created_at', 'updated_at')
+
+admin.site.register(Article, ArticleAdmin)
+```
+
+![image-20191029133141396](img/README/image-20191029133141396.png)
+
+
+
+## 다음에 진행할 내용
+
+이제 MTV 패턴과 CRUD 패턴 등 중요한 부분은 배웠습니다.
+
+지금까지 배운 것들을 이용해서 게시판을 만드는 활용을 해보도록 하겠습니다.
+
+(day9에 30분 동안 처음부터 게시판을 만드는 실습을 해보도록 할게요)
