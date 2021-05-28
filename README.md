@@ -51,7 +51,7 @@ http://nota.whereby.com/general-project
 - [day5: post method, bootstrap, template 상속](day5/README.md)
 - [day6: static file 제공](day6/README.md)
 - [day6-2: ORM](day6-2/README.md)
-- 
+- [day7: ORM, CRUD](day7/README.md)
 
 
 
