@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-TODO: add list function
+{% for article in articles %}
+title: {{article.title}} <br>
+{% empty %}
+there is no article
+{% endfor %}
 {% endblock %}
