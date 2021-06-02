@@ -44,11 +44,20 @@ http://nota.whereby.com/general-project
 
 ## 6. 진행 상황
 
+
+
+### week 1
+
 - [day 1: django 설치](day1/1.md)
 - [day 2: MTV, GET - path parameter로 인자 받기](day2/2.md)
 - [day3: DTL(Django Template Language)](day3/3.md)
 - [day4: get으로 요청하고 받기(query string)](day4/README.md)
 - [day5: post method, bootstrap, template 상속](day5/README.md)
+
+
+
+## week 2
+
 - [day6: static file 제공](day6/README.md)
 - [day6-2: ORM](day6-2/README.md)
 - [day7: ORM, CRUD](day7/README.md)
@@ -58,11 +67,31 @@ http://nota.whereby.com/general-project
 
 
 
+## week 3
+
+
+
+
+
+## 7. 앞으로 진행할 주제들
+
+- 중간 실습
+- django form(html의 validation)
+- django test(10 분 정도 분량)
+- 인증(로그인, 회원가입, 권한 확인 등)
+- orm
+  - 1:N 관계
+  - M:N 관계
+- static file upload/download
+- 종합 실습
+
+
+
 - 추가로 시간 날 때 깊이 있게 다룰 주제들
   - html + css
   - packet의 구조 보기
 
-## 7. 중간 프로젝트 / 최종 프로젝트
+## 8. 중간 프로젝트 / 최종 프로젝트
 
 (optional) 하루 내로 완성할 수 있는 분량의 프로젝트
 
