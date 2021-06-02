@@ -52,6 +52,9 @@ http://nota.whereby.com/general-project
 - [day6: static file 제공](day6/README.md)
 - [day6-2: ORM](day6-2/README.md)
 - [day7: ORM, CRUD](day7/README.md)
+- [day8: 게시판 만들기 - list + CRUD에서 list, C, R까지 구현](day8/README.md)
+- [day9: 게시판 만들기 - 마무리](day8/README.md)
+- [day10: 게시판 만들기 실습](day10/README.md)
 
 
 
