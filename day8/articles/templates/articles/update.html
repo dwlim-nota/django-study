@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/{{article.pk}}/update_proc/" method="POST">
+    {% csrf_token %}
+    <label for="title">타이틀</label>
+    <input type="text" name="title" id="title" value="{{article.title}}"> <br>
+    <label for="content">컨텐츠</label>
+    <textarea name="content" id="content" cols="30" rows="10">{{article.content}}</textarea> <br>
+    <input type="submit" value="제출">
+</form>
+{% endblock %}

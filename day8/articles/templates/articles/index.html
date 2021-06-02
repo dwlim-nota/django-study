@@ -2,7 +2,7 @@
 
 {% block content %}
 {% for article in articles %}
-title: {{article.title}} <br>
+<a href="/{{article.pk}}/">title: {{article.title}}</a><br>
 {% empty %}
 there is no article
 {% endfor %}
