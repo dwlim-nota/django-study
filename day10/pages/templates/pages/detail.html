@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{page.title}}</h2>
+<p>
+    ip: {{page.ip_addr}}
+</p>
+<p>
+    {{page.content}}
+</p>
+<a href="/board/" class="btn btn-outline-primary">뒤로</a>
+<a href="/board/{{page.pk}}/update" class="btn btn-outline-primary">수정</a>
+<a href="/board/{{page.pk}}/delete" class="btn btn-outline-primary">삭제</a>
+{% endblock %}
