@@ -19,7 +19,8 @@ def create(request):
 
 def detail(request, pk: int):
     page = Page.objects.get(pk=pk)
-    context = {"page": page}
+    comments = page.comments.all() # page.comment_set.all()
+    context = {"page": page, "comments": comments}
     return render(request, 'pages/detail.html', context)
 
 def update(request, pk: int):
@@ -41,3 +42,6 @@ def delete(request, pk: int):
     page = Page.objects.get(pk=pk)
     page.delete()
     return redirect('pages:index')
+
+def create_comment(request, page_pk: int):
+    pass
