@@ -8,6 +8,12 @@
 <p>
     {{page.content}}
 </p>
+<h3>=====댓글=====</h3>
+{% for comment in comments %}
+<p>댓글: {{comment.content}}</p>
+{% empty %}
+<p>댓글이 없습니다.</p>
+{% endfor %}
 <a href="/board/" class="btn btn-outline-primary">뒤로</a>
 <a href="/board/{{page.pk}}/update" class="btn btn-outline-primary">수정</a>
 <a href="/board/{{page.pk}}/delete" class="btn btn-outline-primary">삭제</a>
