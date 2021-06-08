@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>게시물 수정({{page.pk}})</h2>
+<form action="/board/{{page.pk}}/update/" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">title</label>
+        <input type="text" class="form-control" id="title" aria-describedby="emailHelp" name="title" value="{{page.title}}">
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">content</label>
+        <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{page.content}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
