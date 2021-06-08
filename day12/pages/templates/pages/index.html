@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p class="float-end">
+    <a href="{% url 'pages:create' %}" class="btn btn-outline-primary text-right">새 게시물 생성</a>
+</p>
+<br>
+<h2>게시물</h2>
+<br>
+{% for page in pages %}
+<p>
+    <a href="{% url 'pages:detail' page.pk %}">title: {{page.title}}</a>
+</p>
+{% empty %}
+there is no pages
+{% endfor %}
+{% endblock %}
