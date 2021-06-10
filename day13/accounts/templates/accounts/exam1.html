@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+
+{% else %}
+<script>
+    window.history.back(-1);
+</script>
+{% endif %}
+{% endblock %}
