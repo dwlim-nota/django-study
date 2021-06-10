@@ -1,10 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser, User
+from django.conf import settings
 
-# Create your models here.
-
-##############################################################################
-# 2. user model 확장
-
-class MyUser(AbstractUser):
+class Employee(AbstractUser):
     age = models.IntegerField(default=0)
 

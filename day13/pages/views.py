@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
+from django.conf import settings
 from .models import Page
+
 
 # Create your views here.
 def index(request):
