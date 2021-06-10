@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{% url 'accounts:login' %}" method="POST">
+    {% csrf_token %}
+    <!-- <div class="classname"></div> -->
+    <!-- .classname -->
+    <!-- <a href="" class="btn"></a> -->
+    <!-- a.btn -->
+    <div class="mb-3">
+        <label for="user_name" class="form-label">user_name</label>
+        <input type="text" class="form-control" id="user_name" name="user_name">
+    </div>
+    <div class="mb-3">
+        <label for="passwd" class="form-label">password</label>
+        <input type="password" class="form-control" id="passwd" name="passwd">
+    </div>
+    <input type="submit" class="btn btn-primary" value="로그인">
+</form>
+
+{% endblock %}
