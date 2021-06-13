@@ -1,4 +1,4 @@
-# day8~day9: CRUD 정리(게시판)
+# day8: CRUD 정리(게시판)
 
 
 
@@ -22,6 +22,14 @@ settings.py => templates/base.html => urls.py => views.py => templates(html) => 
 
 
 
-## day10에 할 내용
+## 코드에 관해서
 
-- 게시판 실습
+day8의 코드와 day9의 코드는 동일한 코드입니다.
+
+day8의 내용을 보셨으면, day10으로 넘어가셔도 좋습니다.
+
+
+
+## day9에 할 내용
+
+- 게시판 실습 마무리
