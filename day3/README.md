@@ -2,7 +2,7 @@
 
 
 
-## 복습([day2 링크](../day2/2.md))
+## 복습([day2 링크](../day3/))
 
 - get으로 path parameter 입력 받는 방법
 - emmet 간단한 사용법
