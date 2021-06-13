@@ -1,6 +1,6 @@
 # django-study
 
-30분 장고(후반으로 갈 수록 60분 장고... :happy:)
+30분 장고(후반으로 갈 수록 60분 장고..!! 🛫)
 
 
 
@@ -50,31 +50,31 @@ whereby에서 진행했음(general-project 채널)
 
 ### week 1
 
-- [day 1: django 설치](day1/1.md)
-- [day 2: MTV, GET - path parameter로 인자 받기](day2/2.md)
-- [day3: DTL(Django Template Language)](day3/3.md)
-- [day4: get으로 요청하고 받기(query string)](day4/README.md)
-- [day5: post method, bootstrap, template 상속](day5/README.md)
+- [day 1: django 설치](day1/)
+- [day 2: MTV, GET - path parameter로 인자 받기](day2/)
+- [day3: DTL(Django Template Language)](day3/)
+- [day4: get으로 요청하고 받기(query string)](day4/)
+- [day5: post method, bootstrap, template 상속](day5/)
 
 
 
 ## week 2
 
-- [day6: static file 제공](day6/README.md)
-- [day6-2: ORM](day6-2/README.md)
-- [day7: ORM, CRUD](day7/README.md)
-- [day8: 게시판 만들기 - list + CRUD에서 list, C, R까지 구현](day8/README.md)
-- [day9: 게시판 만들기 - 마무리](day8/README.md)
-- [day10: 게시판 만들기 실습](day10/README.md)
+- [day6: static file 제공](day6/)
+- [day6-2: ORM](day6-2/)
+- [day7: ORM, CRUD](day7/)
+- [day8: 게시판 만들기 - list + CRUD에서 list, C, R까지 구현](day8/)
+- [day9: 게시판 만들기 - 마무리](day9/)
+- [day10: 게시판 만들기 실습](day10/)
 
  
 
 ## week 3
 
-- [day11: ORM의 1:N 관계(e.g. comment)](day11/README.md)
-- [day12: 인증 (1) - 기본 User Model 활용 CRUD](day12/README.md)
-- [day13: 인증 (2) - AbstractUser, AbstractBaseUser](day13/README.md)
-- [day14: 마무리](day14/README.md)
+- [day11: ORM의 1:N 관계(e.g. comment)](day11/)
+- [day12: 인증 (1) - 기본 User Model 활용 CRUD](day12/)
+- [day13: 인증 (2) - AbstractUser, AbstractBaseUser](day13/)
+- [day14: 마무리](day14/)
   - ORM M:N 관계(e.g. 의사와 환자의 예약 관계, 인스타그램에서 user와 게시물의 좋아요 관계)
   - network debugging(wireshark / fiddler)
   - final project 선정
