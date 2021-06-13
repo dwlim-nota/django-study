@@ -119,7 +119,7 @@ django-study2
 
 
 
-![image-20210521102011969](docs/img/1/image-20210521102011969.png)
+![image-20210521102011969](img/1/image-20210521102011969.png)
 
 
 
@@ -166,9 +166,9 @@ django_intro 밑에 있는 settings.py 파일에서
 
 여기에 INSTALLED_APPS에 'pages'를 한줄 추가해줘야 합니다.
 
-![image-20210521103336861](docs/img/1/image-20210521103336861.png)
+![image-20210521103336861](img/1/image-20210521103336861.png)
 
-![image-20210521103427149](docs/img/1/image-20210521103427149.png)
+![image-20210521103427149](img/1/image-20210521103427149.png)
 
 LANGUAGE_CODE도 en-us에서 ko-kr로 바꿔줍니다.
 
@@ -275,4 +275,4 @@ $ python manage.py runserver
 
 ## 실행 결과(localhost:8000)
 
-![1571883743330](docs/img/1/1571883743330.png)
+![1571883743330](img/1/1571883743330.png)
