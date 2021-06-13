@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for article in articles %}
+<a href="/{{article.pk}}/">title: {{article.title}}</a><br>
+{% empty %}
+there is no article
+{% endfor %}
+{% endblock %}
