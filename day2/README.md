@@ -1,6 +1,6 @@
 # Django Study Day 2 - MVT Pattern, GET 인자 받기
 
-## 복습([day 1 링크](../day1/1.md))
+## 복습([day 1 링크](../day1/))
 
 - venv 가상 환경 생성
 - project 생성(django-admin startproject django_intro)
@@ -33,7 +33,7 @@ Controller는 로직을 어떻게 처리할 지를 담당하고,
 
 Model은 데이터와의 연동을 담당합니다.
 
-![Sprint 12 - MVC Design Pattern](docs/img/2/V7CGG0Y.png)
+![Sprint 12 - MVC Design Pattern](img/2/V7CGG0Y.png)
 
 **장고**에서는 이와 유사하게 **MVT 패턴**을 사용합니다.
 
@@ -43,7 +43,7 @@ View는 MVC 패턴의 Controller에 대응되는 개념입니다. python에서 �
 
 Template은 화면을 직접적으로 그리는 부분입니다. View에서 넘어온 값들을 html과 섞어서 적절하게 렌더링 하는 부분입니다.
 
-![image-20210521145525319](docs/img/2/image-20210521145525319.png)
+![image-20210521145525319](img/2/image-20210521145525319.png)
 
 <center>"MVT pattern"</center>
 
