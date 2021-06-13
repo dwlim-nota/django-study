@@ -1,6 +1,6 @@
 # django-study
 
-뇌 살짝 빼고 듣는 장고
+30분 장고(후반으로 갈 수록 60분 장고... :happy:)
 
 
 
@@ -22,13 +22,15 @@ python 기초 문법을 알고 있는 노타 구성원(netspresso dev team + dja
 
 ## 3. 기간 / 장소 / 시간
 
-총 4주 / 3층 회의실 / 매일 오전 11시 30분(KST 기준. UST + 9시간)
+- 진행 기간: 2021-05-20 ~ 2021-06-11 (working day 기준: 14일)
+- 서울 Nota 건물 3층 회의실
+- 매일 오전 11시 30분(KST 기준. UST + 9시간)
 
 
 
 ## 4. online 주소
 
-http://nota.whereby.com/general-project
+whereby에서 진행했음(general-project 채널)
 
 
 
@@ -44,7 +46,7 @@ http://nota.whereby.com/general-project
 
 ## 6. 진행 상황
 
-
+나중에 복습하실 때, 보기 편하도록 실제 진행했던 날짜 기준 기록이 아니고, working day(5일 = 일주일) 기준으로 기록했습니다.
 
 ### week 1
 
@@ -65,42 +67,48 @@ http://nota.whereby.com/general-project
 - [day9: 게시판 만들기 - 마무리](day8/README.md)
 - [day10: 게시판 만들기 실습](day10/README.md)
 
-
+ 
 
 ## week 3
 
+- [day11: ORM의 1:N 관계(e.g. comment)](day11/README.md)
+- [day12: 인증 (1) - 기본 User Model 활용 CRUD](day12/README.md)
+- [day13: 인증 (2) - AbstractUser, AbstractBaseUser](day13/README.md)
+- [day14: 마무리](day14/README.md)
+  - ORM M:N 관계(e.g. 의사와 환자의 예약 관계, 인스타그램에서 user와 게시물의 좋아요 관계)
+  - network debugging(wireshark / fiddler)
+  - final project 선정
 
 
 
+## final project(optional)
 
-## 7. 앞으로 진행할 주제들
+참여하고 싶은 사람에 한정해서 진행. 
 
-- 중간 실습
+- 도서 관리 시스템(동욱)
+- 자유 주제 - 배운 내용 recap(정훈)
+- 익명 tweeter(호인)
+
+
+
+## 7. 진행하지 못 했던 주제들
+
+30분을 목표로 잡고 했던 스터디라서, 시간 제약상 진행하지 못했습니다.
+
+한편으로는 하지 않았던게 긴장감 있게 진행되어서 오히려 나았나 싶기도 합니다. :happy:
+
+
+
 - django form(html의 validation)
+  - 요즘 웹 개발 트렌드는 backend와 frontend를 완벽하게 분리해서 개발하는 것이 트렌드인데, frontend부분을 장고로 너무 많이 제어하려는 것 같아서 의도적으로 제외
 - django test(10 분 정도 분량)
-- 인증(로그인, 회원가입, 권한 확인 등)
-- orm
-  - 1:N 관계
-  - M:N 관계
-- static file upload/download
-- 종합 실습
+  - 마지막에 한꺼번에 하려다가 시간 관계상 진행하지 못 했습니다.
 
+- static file upload/download(40분 분량)
+  - 우선순위에서 조금 뒤로 밀리다가 못 했음.
+- ORM 연습(40분 분량)
+  - ORM 체득 / 성능 향상을 위해서 필요한 부분들인데 진행하지 못 해서 조금 아쉽습니다.
 
-
-- 추가로 시간 날 때 깊이 있게 다룰 주제들
-  - html + css
-  - packet의 구조 보기
-
-## 8. 중간 프로젝트 / 최종 프로젝트
-
-(optional) 하루 내로 완성할 수 있는 분량의 프로젝트
-
-로그인 + CRUD 기능을 복습해 볼 수 있도록 계획
-
-생각하고 있는 후보들은 다음과 같습니다.
-
-- nota 도서 관리 페이지
-- deep learning 채점 시스템(csv를 upload해서 비교하는 방식)
-
-괜찮은 것이 있으면 제안해주세요. 로그인 + CRUD가 들어간 것이면 좋습니다.
+- html + css(40분 분량)
+  - block element / inline element / size 등...
 
