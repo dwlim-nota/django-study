@@ -8,8 +8,9 @@ def signup(request):
         username = request.POST.get("user_name")
         email = request.POST.get("email")
         passwd = request.POST.get("passwd")
-        user = User.objects.create_user(username, email, passwd)
+        user = User.objects.create_user(username=username, email=email, password=passwd)
         user.save()
+        login(request, user)
         return redirect("pages:index")
     else:
         return render(request, 'accounts/signup.html')
@@ -24,3 +25,19 @@ def user_login(request):
         return redirect("pages:index")
     else:
         return render(request, "accounts/login.html")
+
+def myaccount(request):
+    if request.method == "POST":
+        pass
+    else:
+        return render(request, "accounts/myaccount.html")
+
+def signout(request):
+    if request.method == "POST":
+        user = get_user(request)
+        user.delete()
+    return redirect("pages:index")
+
+def user_logout(request):
+    logout(request)
+    return redirect("pages:index")

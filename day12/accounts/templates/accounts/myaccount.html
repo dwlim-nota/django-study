@@ -1,0 +1,12 @@
+<!-- myaccount.html -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>내 계정 정보</h2>
+username: {{user.username}} <br>
+useremail: {{user.email}} <br><br><br>
+
+<form action="{% url 'accounts:signout' %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="회원 탈퇴" class="btn btn-outline-primary">
+</form>
+{% endblock %}
