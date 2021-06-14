@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from django.conf import settings
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user, login, logout, authenticate
 from .models import Page
-
 
 # Create your views here.
 def index(request):
@@ -14,7 +14,11 @@ def create(request):
         ip_addr = request.META.get('REMOTE_ADDR')
         title = request.POST.get("title")
         content = request.POST.get("content")
-        Page.objects.create(title=title, content=content, ip_addr=ip_addr)
+        if request.user.is_authenticated:
+            user = request.user
+        else:
+            user = None
+        Page.objects.create(title=title, content=content, ip_addr=ip_addr, author=user)
         return redirect("pages:index")
     else:
         return render(request, "pages/create.html")
@@ -27,6 +31,8 @@ def detail(request, pk: int):
 
 def update(request, pk: int):
     if request.method == "POST":
+        if not request.user.is_authenticated:
+            return redirect("pages:index")
         title = request.POST.get("title")
         content = request.POST.get("content")
 
